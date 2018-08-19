@@ -37,7 +37,8 @@ namespace bnet
 #elif  BX_PLATFORM_LINUX \
 	|| BX_PLATFORM_ANDROID \
 	|| BX_PLATFORM_OSX \
-	|| BX_PLATFORM_IOS
+	|| BX_PLATFORM_IOS \
+	|| BX_PLATFORM_RPI
 		return errno;
 #else
 		return 0;
@@ -75,7 +76,8 @@ namespace bnet
 #elif  BX_PLATFORM_LINUX \
 	|| BX_PLATFORM_ANDROID \
 	|| BX_PLATFORM_OSX \
-	|| BX_PLATFORM_IOS
+	|| BX_PLATFORM_IOS \
+	|| BX_PLATFORM_RPI
 		::fcntl(_socket, F_SETFL, O_NONBLOCK);
 #else
 		BX_UNUSED(_socket);

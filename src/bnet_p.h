@@ -58,7 +58,8 @@
 #elif  BX_PLATFORM_LINUX \
 	|| BX_PLATFORM_ANDROID \
 	|| BX_PLATFORM_OSX \
-	|| BX_PLATFORM_IOS
+	|| BX_PLATFORM_IOS \
+	|| BX_PLATFORM_RPI
 #	include <memory.h>
 #	include <errno.h> // errno
 #	include <fcntl.h>
