@@ -133,6 +133,7 @@ namespace bnet
 			}
 
 			setSockOpts(m_socket);
+			setNonBlock(m_socket);
 
 			const bool ssl = _sslCtx != NULL;
 			int err = connectsocket(m_socket, _ip, _port, ssl);
@@ -148,8 +149,6 @@ namespace bnet
 				ctxPush(m_handle, MessageId::ConnectFailed);
 				return;
 			}
-
-			setNonBlock(m_socket);
 
 #if BNET_CONFIG_OPENSSL
 			if (ssl)
